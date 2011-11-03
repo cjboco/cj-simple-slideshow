@@ -1,0 +1,184 @@
+<!doctype html>
+<!--[if lt IE 7 ]><html lang="en" class="no-js ie6"><![endif]-->
+<!--[if IE 7 ]><html lang="en" class="no-js ie7"><![endif]-->
+<!--[if IE 8 ]><html lang="en" class="no-js ie8"><![endif]-->
+<!--[if IE 9 ]><html lang="en" class="no-js ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>CJBoCo - CJ Simple Slideshow</title>
+<link rel="shortcut icon" href="assets/images/favicon.png">
+<link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css" rel="stylesheet" type="text/css"/>
+<link href="assets/css/demo.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body>
+<div id="wrapper">
+	<header>
+		<div class="padder">
+			<h1>CJ Simple Slideshow</h1>
+			<h3>A Simple Cross-Fade Slideshow Plug-In for JQuery</h3>
+			<p>This simple jQuery plugin creates a stylable date navigation bar/date picker which allows for easy date selection.</p>
+		</div>
+	</header>
+	<section>
+		<h2><span>Example</span></h2>
+		<p>You can select a date and the table data will change based on your selection (Valid dates are May, June July, August, September and October of 2011). Use the theme switcher to see various styles based on jQuery UI theme builder.</p>
+		<h3>Example 1</h3>
+		<div style="overflow:hidden">
+			<div id="SlideShow" class="clearfix"> <img src="assets/images/sample1.jpg" width="250" height="125" /><br />
+				<a href="http://www.cjboco.com/"><img src="assets/images/sample2.jpg" width="250" height="125" alt="This is caption 2." /></a> </div>
+		</div>
+		<br />
+		<h4>CSS</h4>
+		<pre><code>/* style the first slideshow in the css */
+#SlideShow { position: relative; display: block; width: 250px; height: 125px; overflow: hidden; }</code></pre>
+		<br />
+		<h4>Html</h4>
+		<pre><code>&lt;div id=&quot;SlideShow&quot;&gt;
+   &lt;img src=&quot;sample1.jpg&quot; width=&quot;250&quot; height=&quot;125&quot; /&gt;&lt;br /&gt;
+   &lt;a href=&quot;/projects/cj-simple-slideshow/3.0.0/&quot;&gt;&lt;img src=&quot;sample2.jpg&quot; width=&quot;250&quot; height=&quot;125&quot; alt=&quot;This is caption 2.&quot; /&gt;&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+		<br />
+		<h4>Code</h4>
+		<pre><code>// initialize the first slideshow container
+$("#SlideShow").cjSimpleSlideShow();</code></pre>
+		<br />
+		<div style="overflow:hidden">
+			<h3>Example 2</h3>
+			<div id="SlideShow2" class="clearfix">
+				<img src="assets/images/sample1.jpg" width="350" height="175" alt="The image is centered in the box." /><br />
+				<img src="assets/images/sample3.jpg" width="350" height="175" alt="Abba dabba dubba dab." /><br />
+				<a href="http://www.cjboco.com/"><img src="assets/images/sample2.jpg" width="350" height="175" alt="This is caption 2 and the image is still centered in the box." /></a>
+			</div>
+			<br />
+			<button id="slideshowButton">Start</button>
+		</div>
+		<br />
+		<h4>CSS</h4>
+		<pre><code>/* styles for our second slideshow */
+#SlideShow2 { position: relative; display: block; width: 720px; height: 450px; background: #eee; border: 1px solid #ccc; overflow: hidden; }
+#SlideShow2 .cj_slideshow_pause { display: block; width: 100%; height: auto; margin-top: 25px; text-align: center; color: red; font-size: 11px; }
+#SlideShow2 .cj_slideshow_caption { bottom: 25px; text-align: center; font-size: 12px; font-weight: bold; color: purple; }</code></pre>
+		<br />
+		<h4>Html</h4>
+		<pre><code>&lt;div id=&quot;SlideShow2&quot;&gt;
+   &lt;img src=&quot;sample1.jpg&quot; width=&quot;350&quot; height=&quot;175&quot; alt=&quot;The image is centered in the box.&quot; /&gt;&lt;br /&gt;
+   &lt;a href=&quot;/projects/cj-simple-slideshow/3.0.0/&quot;&gt;&lt;img src=&quot;sample2.jpg&quot; width=&quot;350&quot; height=&quot;175&quot; alt=&quot;This is caption 2 and the image is still centered in the box.&quot; /&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;button id=&quot;slideshowButton&quot;&gt; Start Slide Show &lt;/button&gt;</code></pre>
+		<br />
+		<h4>Code</h4>
+		<pre><code>// initialize the second slideshow container.
+// It's ugly, but it uses all of the parameters avaialble.
+$("#SlideShow2").cjSimpleSlideShow({
+   autoRun: false,
+   delay: 5500,
+   dissolve: 40,
+   showCaptions: true,
+   centerImage: true,
+   allowPause: true,
+   pauseText: &quot;&lt;em&gt;Paused Baby!&lt;/em&gt;&quot;
+});
+
+// manually start the slide show on button click
+$("#slideshowButton").click( function() {
+   $("#SlideShow2").cjSimpleSlideShow("start");
+});</code></pre>
+		<br />
+		<div style="overflow:hidden">
+			<h3>Example 3 (Class test)</h3>
+			<p>This example show how to use the plugin on multiple elements with the same class name. It will initiate all the elements with the same call.</p>
+			<div class="clearfix">
+				<div class="SlideShow3">
+					<img src="assets/images/sample3.jpg" width="350" height="175" alt="Abba dabba dubba dab." /><br />
+					<img src="assets/images/sample1.jpg" width="350" height="175" alt="The image is centered in the box." /><br />
+					<img src="assets/images/sample2.jpg" width="350" height="175" alt="This is caption 2 and the image is still centered in the box." />
+				</div>
+				<div class="SlideShow3">
+					<img src="assets/images/sample2.jpg" width="350" height="175" alt="This is caption 2 and the image is still centered in the box." /><br />
+					<img src="assets/images/sample1.jpg" width="350" height="175" alt="The image is centered in the box." /><br />
+					<img src="assets/images/sample3.jpg" width="350" height="175" alt="Abba dabba dubba dab." />
+				</div>
+			</div>
+		</div>
+		<br />
+		<h4>CSS</h4>
+		<pre><code>/* styles for our third slideshow */
+.SlideShow3 { display: block; width: 350px; height: 175px; float: left; margin-right: 10px; overflow: hidden; }</code></pre>
+		<br />
+		<h4>Html</h4>
+		<pre><code>&lt;div class="clearfix"&gt;
+   &lt;div class="SlideShow3"&gt;
+      &lt;img src="sample1.jpg" width="350" height="175" alt="The image is centered in the box." /&gt;&lt;br /&gt;
+      &lt;img src="sample2.jpg" width="350" height="175" alt="This is caption 2 and the image is still centered in the box." /&gt;
+   &lt;/div&gt;
+   &lt;div class="SlideShow3"&gt;
+      &lt;img src="sample2.jpg" width="350" height="175" alt="This is caption 2 and the image is still centered in the box." /&gt;&lt;br /&gt;
+      &lt;img src="sample1.jpg" width="350" height="175" alt="The image is centered in the box." /&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+		<br />
+		<h4>Code</h4>
+		<pre><code>/* class test (multiple elements initiated with the same call) */
+$(".SlideShow3").cjSimpleSlideShow({
+   delay: 500,
+   dissolve: 500
+});</code></pre>
+		<br />
+	</section>
+	<footer>
+		<div class="padder"> &copy;2011 <a href="http://www.cjboco.com/">Creative Juices Bo. Co.</a> All rights reserved.<br />
+			Licensed under the MIT.</br>
+		</div>
+	</footer>
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js"></script>
+<script src="//jqueryui.com/themeroller/themeswitchertool/"></script>
+<script src="assets/js/jquery.cj-simple-slideshow.js"></script>
+<script>
+(function($) {
+	"use strict";
+
+	/* initialize the first slideshow container */
+	$("#SlideShow").cjSimpleSlideShow();
+
+	/*initialize the second slideshow container.
+	It's ugly, but it uses all of the parameters avaialble.*/
+	$("#SlideShow2").cjSimpleSlideShow({
+		autoRun: false,
+		delay: 500,
+		dissolve: 1600,
+		showCaptions: true,
+		centerImage: true,
+		allowPause: false,
+		pauseText: "<em>Paused Baby!</em>"
+	});
+
+	/* example of a delayed slideshow start */
+	$("#slideshowButton").click(function(){
+		var $this = $(this);
+		if ($this.html() === "Start") {
+			$("#SlideShow2").cjSimpleSlideShow("start");
+			$this.html("Pause");
+		} else {
+			$("#SlideShow2").cjSimpleSlideShow("pause");
+			$this.html("Start");
+		}
+	});
+
+	/* class test (multiple elements initiated with the same call) */
+	$(".SlideShow3").cjSimpleSlideShow({
+		autoRun: true,
+		delay: 500,
+		dissolve: 500
+	});
+
+}(jQuery));
+</script>
+</body>
+</html>
