@@ -1,8 +1,8 @@
 # CJ Simple Slideshow 3.1
 ## A Simple Cross-Fade Slideshow Plug-In for JQuery
 
-Copyright (c) 2011 Creative Juices Bo. Co.
-Written by: Doug Jones (www.cjboco.com)
+Copyright (c) 2011 Creative Juices Bo. Co.  
+Written by: Doug Jones ([www.cjboco.com](https://cjboco.com))  
 Licensed under the MIT.
 
 View [online demo](http://cjboco.github.io/cj-simple-slideshow/).
@@ -12,10 +12,12 @@ the plug-in by placing a load wrapper in your code, like so...
 
 ```
 $("#MySlideShow").cjSimpleSlideShow();
+
 ...or, place on onload in your body tag, like so:
-```
 
 <body onload="$('#MySlideShow').cjSimpleSlideShow();">
+```
+
 But this method is so un-jquery like, don't you think? If you want to pass some options, you might do something like this:
 
 ```
@@ -24,6 +26,7 @@ $("#MySlideShow").cjSimpleSlideShow({
     delay: 6000, // miliseconds
     dissolve: 300 // miliseconds
 });
+
 // delay the slideshow and then start it later...
 $("#MySlideShow").cjSimpleSlideShow("start");
 ```
